@@ -1,0 +1,13 @@
+#数据库名称
+config.tableSchema=
+#数据库表名
+config.tableName=t_fa_account_situation
+#数据库表字段及类型，格式（字段1-varchar,字段2-varchar,...）
+#select GROUP_CONCAT(CONCAT_WS('-',column_name, data_type)) from information_schema.columns where table_name='t_fa_rebate_qx_main' and table_schema='dev_db_fund';
+config.columns=SITUATION_ID-varchar,SALES_AREA_CODE-varchar,SALES_AREA_NAME-varchar,SALES_VILLAGE_CODE-varchar,SALES_VILLAGE_NAME-varchar,BUYER_ID-int,BUYER_NAME-varchar,SELLER_ID-int,SELLER_NAME-varchar,BALANCE-decimal,USE_AMOUNT-decimal,AVAILABLE_BALANCE-decimal,BUYER_CODE-varchar,CATAGORY_NAME-varchar,CATAGORY_CODE-varchar,BU_NAME-varchar,BU_CODE-varchar,CREATE_PERSON-varchar,CREATE_DATE-datetime,MODI_PERSON-varchar,MODI_DATE-datetime,DELETE_PERSON-varchar,DELETE_DATE-datetime,EXTEND1-varchar,EXTEND2-datetime,EXTEND3-decimal,BUYER_SAP_CODE-varchar,CASH_DEBT-decimal,CASH_PAY-decimal,CASH_NO_PAY-decimal
+#excel数据路径
+config.excelPath=C:\\Users\\xielw\\Desktop\\数据处理\\清洗余额初始化模板111111.xlsx
+#指定的字段值(若为空,则以excel中的数据为主)
+config.custom.tableName.columnValue=
+#输出路径(如果不配置,取当前路径)
+config.file.path=C:\\Users\\xielw\\Desktop\\生产环境_清洗返利余额初始化2019-06-17.sql
