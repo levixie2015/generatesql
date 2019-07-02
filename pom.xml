@@ -4,21 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.chem</groupId>
+    <groupId>com.lw</groupId>
     <artifactId>generatesql</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -109,7 +97,7 @@
                             <includes>
                                 <!-- 打jar包时，只打包class文件 -->
                                 <!-- 有时候可能需要一些其他文件，这边可以配置，包括剔除的文件等等-->
-<!--                                <include>**/*.class</include>-->
+                                <include>**/*.class</include>
                             </includes>
                         </configuration>
                     </plugin>
@@ -153,8 +141,8 @@
                                 </goals>
                                 <configuration>
                                     <encoding>UTF-8</encoding>
-                                    <!-- 资源文件的输出目录 -->
-                                    <outputDirectory>{project.build.directory}/config</outputDirectory>
+                                    <!-- 资源文件的输出目录  参考：Maven属性（properties）标签的使用-->
+                                    <outputDirectory>${project.build.outputDirectory}/config</outputDirectory>
                                     <resources>
                                         <!-- 资源文件的原始目录，有多个的话就多配几个 -->
                                         <resource>
@@ -168,15 +156,30 @@
                                                 <include>**/*.*</include>
                                             </includes>
                                             <excludes>
-                                                <exclude>**/*.xlsx</exclude>
+                                                <exclude>**/tempate/*.xlsx</exclude>
+                                                <exclude>**/config/*.properties</exclude>
                                             </excludes>
+                                        </resource>
+
+                                        <resource>
+                                            <directory>src/main/config</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>**/*.properties*</include>
+                                            </includes>
+                                        </resource>
+                                        <resource>
+                                            <directory>src/main/tempate</directory>
+                                            <filtering>true</filtering>
+                                            <includes>
+                                                <include>**/*.xlsx</include>
+                                            </includes>
                                         </resource>
                                     </resources>
                                 </configuration>
                             </execution>
                         </executions>
                     </plugin>
-
                 </plugins>
             </build>
         </profile>
