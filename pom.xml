@@ -6,7 +6,7 @@
 
     <groupId>com.lw</groupId>
     <artifactId>generatesql</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -232,7 +232,7 @@
         <repository>
             <id>nexus-public</id>
             <name>nexus-public</name>
-            <url>http://192.168.80.110:8081/nexus/content/repositories/public/</url>
+            <url>http://192.168.80.110:8081/nexus/content/groups/public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
